@@ -103,7 +103,7 @@
     background-size: contain;
   }
   .texts {
-    padding-top: 30px;
+    padding-top: 3px;
     display: flex;
     align-items: center;
     gap: 20px;
