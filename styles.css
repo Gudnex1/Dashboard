@@ -128,7 +128,7 @@
   .buttons button {
     width: 90%;
     height: 35px;
-    padding-inline: 1px;
+    padding-inline: 15px;
     border-radius: 20px;
     outline: none;
     border: none;
