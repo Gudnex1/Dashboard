@@ -18,6 +18,7 @@
       grid-template-columns: auto 1fr;
       min-height: 100vh;
       min-height: 100dvh;
+      overflow-x: none;
     }
     a {
       text-decoration: none;
@@ -116,25 +117,32 @@
     flex-direction: column;
   }
   .buttons {
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
     display: flex;
     gap: 20px;
     justify-content: space-between;
     margin-left: auto;
+    padding-right: 10px;
   }
   .buttons button {
-    width: 100%;
+    width: 90%;
     height: 35px;
-    padding-inline: 20px;
+    padding-inline: 1px;
     border-radius: 20px;
     outline: none;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
     background-color: var(--clr2);
     color: white;
     font-size: 1rem;
-    text-align: center;
-    justify-content: end;
+  }
+  .buttons svg {
+    height: 18px;
+    width: 18px;
   }
   .me h2 {
     font-size: 1.7rem;
@@ -157,7 +165,6 @@
     /* grid-template-rows: repeat(2, 1fr); */
     grid-column-gap: 15px;
     grid-row-gap: 20px;
-    padding-right: 30px;
   }
   .box {
     background-color: white;
