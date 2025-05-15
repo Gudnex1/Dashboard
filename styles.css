@@ -1,7 +1,7 @@
 @layer base {
   :root {
     --sideclr: rgb(24, 146, 211);
-    --clr1: rgb(231, 205, 151);
+    --clr1: rgb(190, 145, 29);
     --clr2: rgb(20, 147, 215);
     --clr3: rgb(225, 232, 240);
 
@@ -27,7 +27,6 @@
 @layer nav {
   nav {
     width: 150px;
-    border: 1px solid #383737;
     padding: 20px 30px 0 20px;
     display: flex;
     flex-direction: column;
@@ -69,10 +68,10 @@
 }
 @layer intro {
   main {
-    padding-inline: 20px;
+    /* padding-inline: 20px; */
     padding-block-start: 20px;
-    border-bottom: 1px solid rgb(71, 71, 71);
     height: 130px;
+    max-width: 100%;
   }
   main section .search svg {
     fill: black;
@@ -93,6 +92,10 @@
   .search a {
     padding-left: 20px;
     padding-right: 30px;
+  }
+  .intro {
+    padding-inline: 25px;
+    padding-bottom: 10px;
   }
   .search img,
   .texts img {
@@ -133,8 +136,55 @@
     text-align: center;
     justify-content: end;
   }
-  .me h2{
+  .me h2 {
     font-size: 1.7rem;
   }
+}
+@layer content {
+  .content {
+    min-width: fit-content;
+    background-color: var(--clr3);
+    padding-top: 20px;
+    padding-inline: 20px;
+    height: fit-content;
+    display: flex;
+    gap: 20px;
   }
-
+  .cont {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-rows: repeat(2, 1fr); */
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
+    padding-right: 30px;
+  }
+  .box {
+    background-color: white;
+    height: 150px;
+    padding-inline: 20px;
+    padding-block: 20px;
+    border-radius: 15px;
+    border-left: 10px solid var(--clr1);
+  }
+  .side2 {
+    justify-self: end;
+    margin-left: auto;
+  }
+  .side {
+    width: 200px;
+    height: fit-content;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 3px 3px 3px rgba(95, 95, 95, 0.3);
+}
+.gap {
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+}
