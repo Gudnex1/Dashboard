@@ -35,9 +35,12 @@
     /* gap: 65px; */
     background-color: var(--sideclr);
     color: white;
-    position: sticky;
+    position: fixed; /* Make the navigation fixed */
     top: 0;
-    justify-content: flex-start;
+    left: 0;
+    bottom: 0;
+    z-index: 100; /* Ensure it stays on top of other content */
+    overflow-y: auto
   }
   nav ul {
     list-style-type: none;
@@ -83,7 +86,8 @@
   nav ul:last-child {
     margin-top: auto;
     border-top: 1px solid var(--clr3);
-    padding-top: 5px;
+    padding-top: 0px;
+    padding-bottom: 20px;
   }
 }
 @layer intro {
@@ -92,6 +96,7 @@
     padding-block-start: 20px;
     height: 130px;
     max-width: 100%;
+    margin-left: 220px
   }
   main section .search svg {
     fill: black;
@@ -118,13 +123,16 @@
     background-color: var(--clr3);
     border-radius: 8px;
     padding: 8px 16px;
-    width: 60%;
+    width: 50%;
   }
   .search2 {
     display: flex;
     margin-left: auto;
     align-items: flex-end;
     gap: 5px;
+  }
+  .shrink {
+    flex-shrink: 0;
   }
   .search2 a {
     padding: 6px 6px 0 6px;
@@ -377,7 +385,7 @@
   }
 
   .blue-bg {
-    background-color: #60a5fa;
+    background-color: gray;
   }
 
   .purple-bg {
