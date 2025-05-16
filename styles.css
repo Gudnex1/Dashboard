@@ -484,6 +484,7 @@
   }
   .content {
     flex-direction: column;
+    padding-top: 0;
   }
   .buttons {
     display: none;
@@ -510,7 +511,6 @@
   }
   .mobile_button button svg {
     fill: white;
-    width: 1.3rem;
     height: 1.3rem;
   }
   .mobile_button button {
@@ -521,6 +521,7 @@
     margin-left: 4px;
     border-radius: 50%;
     text-align: center;
+    align-self: center;
   }
   .mobil {
     display: flex;
