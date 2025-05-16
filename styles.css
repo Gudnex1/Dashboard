@@ -4,6 +4,7 @@
     --clr1: rgb(190, 145, 29);
     --clr2: rgb(20, 147, 215);
     --clr3: rgb(225, 232, 240);
+    --hoverclr: rgba(0, 166, 255, 0.7);
 
     * {
       margin: 0;
@@ -16,9 +17,8 @@
       display: grid;
       font-family: "Dosis", sans-serif;
       grid-template-columns: auto 1fr;
-      min-height: 100vh;
-      min-height: 100dvh;
-      overflow-x: none;
+      overflow-y: scroll;
+      height: 100vh;
     }
     a {
       text-decoration: none;
@@ -27,44 +27,63 @@
 }
 @layer nav {
   nav {
-    width: 150px;
-    padding: 20px 30px 0 20px;
+    width: 220px;
+    padding: 20px 0 0 0;
     display: flex;
+    height: 100vh;
     flex-direction: column;
-    gap: 65px;
+    /* gap: 65px; */
     background-color: var(--sideclr);
     color: white;
-    height: 100vh;
+    position: sticky;
+    top: 0;
+    justify-content: flex-start;
   }
   nav ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    /* gap: 20px; */
     justify-content: center;
+    padding-block-start: 20px;
   }
   nav ul li a {
     color: white;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 20px;
+    gap: 8px;
+    font-size: 1.1rem;
+    padding: 12px 16px;
+  }
+  .active {
+    border-left: 5px solid var(--clr3);
+    background-color: var(--hoverclr);
   }
   ul li a svg {
     fill: #fff;
   }
+  nav ul li {
+    transition: all 0.3s ease;
+  }
 
   nav ul li:hover {
-    border-bottom: 1px solid rgb(255, 255, 255);
+    background-color: var(--hoverclr);
   }
   .head {
-    font-size: 26px;
+    font-size: 1.3rem;
     display: flex;
     gap: 5px;
     align-items: center;
+    padding-bottom: 20px;
+    padding-inline-start: 20px;
   }
   .head svg {
     font-size: 60px;
+  }
+  nav ul:last-child {
+    margin-top: auto;
+    border-top: 1px solid var(--clr3);
+    padding-top: 5px;
   }
 }
 @layer intro {
@@ -78,14 +97,14 @@
     fill: black;
   }
   input[type="search"] {
-    width: 50%;
-    padding: 7px;
-    border-radius: 10px;
+    width: 100%;
     outline: none;
     border: none;
     background-color: var(--clr3);
+    margin-inline-start: 10px;
+    font-size: 0.8rem;
   }
-  input[type="search"]:focus {
+  .search-cont:active {
     border: 1px solid rgba(20, 147, 215, 0.6);
   }
   .search {
@@ -93,27 +112,45 @@
     align-items: center;
     gap: 15px;
   }
-  .search a {
-    padding-left: 20px;
-    padding-right: 30px;
+  .search-cont {
+    display: flex;
+    align-items: center;
+    background-color: var(--clr3);
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 60%;
   }
+  .search2 {
+    display: flex;
+    margin-left: auto;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  .search2 a {
+    padding: 6px 6px 0 6px;
+    border-radius: 20px;
+    transition: all 0.33s ease;
+    margin-right: 15px;
+  }
+  .search2 a:hover {
+    background-color: var(--clr3);
+  }
+
+  .search2 a svg:hover { animation-name: leHorizontalShake; animation-iteration-count: infinite }
+@keyframes leHorizontalShake {
+    3%, 12%, 21%, 30%, 39%, 48%, 57%, 65%, 74%, 3%, 92% { transform: translateX(5px) }
+    6%, 15%, 24%, 33%, 42%, 51%, 60%, 68%, 77%, 86%, 95% { transform: translateX(3px) }
+    9%, 18%, 27%, 36%, 45%, 54%, 63%, 71%, 80%, 89%, 98% { transform: translateX(-5px) }
+}
   .intro {
     padding-inline: 25px;
     padding-bottom: 10px;
-  }
-  .search img,
-  .texts img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-position: bottom;
-    background-size: contain;
   }
   .texts {
     margin-top: 30px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
   }
   .me {
     display: flex;
@@ -235,6 +272,10 @@
   }
   .box h3 svg {
     fill: var(--clr1);
+    transition: transform 0.3s ease;
+  }
+  .box h3 svg:hover {
+    transform: rotate(180deg);
   }
 }
 @layer card {
