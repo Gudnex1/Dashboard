@@ -420,7 +420,8 @@
     display: none;
   }
   body {
-    /* display: block; */
+    display: block;
+    padding: 5px;
   }
   main {
     margin-left: 0;
@@ -433,7 +434,7 @@
     flex-shrink: 3;
     overflow: auto;
   }
-  .side2 {
+  .side2, .mobile {
     display: none;
   }
   .content {
@@ -441,6 +442,11 @@
   }
   .intro .buttons {
     display: none;
-
+  }
+  .me h2 span {
+    display: none;
+  }
+  .search2 a {
+    margin: 0;
   }
 }
