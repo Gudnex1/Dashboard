@@ -449,4 +449,9 @@
   .search2 a {
     margin: 0;
   }
+  .texts {
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+
 }
