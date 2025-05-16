@@ -68,7 +68,6 @@
   }
   nav ul li {
     transition: all 0.3s ease;
-
   }
 
   nav ul li:hover {
@@ -98,7 +97,7 @@
     padding-block-start: 20px;
     height: 130px;
     /* max-width: 100%; */
-    margin-left: 220px
+    margin-left: 220px;
   }
   main section .search svg {
     fill: black;
@@ -146,12 +145,51 @@
     background-color: var(--clr3);
   }
 
-  .search2 a svg:hover { animation-name: leHorizontalShake; animation-iteration-count: infinite }
-@keyframes leHorizontalShake {
-    3%, 12%, 21%, 30%, 39%, 48%, 57%, 65%, 74%, 3%, 92% { transform: translateX(5px) }
-    6%, 15%, 24%, 33%, 42%, 51%, 60%, 68%, 77%, 86%, 95% { transform: translateX(3px) }
-    9%, 18%, 27%, 36%, 45%, 54%, 63%, 71%, 80%, 89%, 98% { transform: translateX(-5px) }
-}
+  .search2 a svg:hover {
+    animation-name: leHorizontalShake;
+    animation-iteration-count: infinite;
+  }
+  @keyframes leHorizontalShake {
+    3%,
+    12%,
+    21%,
+    30%,
+    39%,
+    48%,
+    57%,
+    65%,
+    74%,
+    3%,
+    92% {
+      transform: translateX(5px);
+    }
+    6%,
+    15%,
+    24%,
+    33%,
+    42%,
+    51%,
+    60%,
+    68%,
+    77%,
+    86%,
+    95% {
+      transform: translateX(3px);
+    }
+    9%,
+    18%,
+    27%,
+    36%,
+    45%,
+    54%,
+    63%,
+    71%,
+    80%,
+    89%,
+    98% {
+      transform: translateX(-5px);
+    }
+  }
   .intro {
     padding-inline: 25px;
     padding-bottom: 10px;
@@ -287,6 +325,9 @@
   .box h3 svg:hover {
     transform: rotate(180deg);
   }
+  .mobile_button {
+    display: none;
+  }
 }
 @layer card {
   .trending-card {
@@ -414,6 +455,9 @@
     position: relative;
     z-index: 10;
   }
+  .mobile {
+    display: none;
+  }
 }
 @media (max-width: 500px) {
   nav {
@@ -434,24 +478,45 @@
     flex-shrink: 3;
     overflow: auto;
   }
-  .side2, .mobile {
+  .side2,
+  .mobile {
     display: none;
   }
   .content {
     flex-direction: column;
   }
-  .intro .buttons {
+  .buttons {
     display: none;
   }
   .me h2 span {
     display: none;
+  }
+  .search2 {
+    align-items: center;
+    gap: 0;
   }
   .search2 a {
     margin: 0;
   }
   .texts {
     margin-top: 20px;
-    justify-content: space-between;
   }
-
+  .intro {
+    padding-inline: 0px;
+  }
+  .mobile_button {
+    margin-left: auto;
+    display: block;
+  }
+  .mobile_button button svg {
+    fill: white;
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .mobile_button button {
+    background-color: var(--clr2);
+    outline: none;
+    border: none;
+    padding: 2px;
+  }
 }
