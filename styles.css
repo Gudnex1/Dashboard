@@ -253,7 +253,7 @@
     /* grid-template-rows: repeat(2, 1fr); */
     grid-column-gap: 15px;
     grid-row-gap: 15px;
-    height: 100vh;
+    height: 130vh;
     overflow: auto;
   }
   .box {
